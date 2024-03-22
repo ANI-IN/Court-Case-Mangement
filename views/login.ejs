@@ -1,43 +1,84 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link type="text/css" rel="stylesheet" href="/css/login_style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="/css/login_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-image: url('/images/justice.jpeg');
+        background-size: cover; /* Ensures the background image covers the entire screen */
+        background-position: center; /* Centers the background image */
+        background-repeat: no-repeat;
+        background-attachment: fixed; /* Keeps the background image fixed while scrolling */
+        margin: 0; /* Remove default body margin */
+        padding: 0; /* Remove default body padding */
+      }
+      
+      .container {
+        width: 50%; /* Utilize half of the container width */
+        margin: 0 auto; /* Center the container horizontally */
+      }
+      
+      button[type="submit"] {
+        width: 100%; /* Make the button width 100% */
+        border-radius: 20px; /* Make the button rounded */
+      }
+      
+      .footer {
+        background-color: rgba(252, 250, 250, 0.7);
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        text-align: center;
+        padding: 20px 0; /* Adjust the padding to increase the size of the footer */
+      }
+      
+      .footer .text-center {
+        width: 90%;
+        margin: 0 auto;
+      }
+    </style>
   </head>
 
   <body>
-    <center><h1><i class="fa fa-user-circle-o" style="font-size:36px"></i>Login</h1></center>
-
+    <center><h1 style="color: white;"><i class="fa fa-user-circle-o" style="font-size:36px"></i> Login</h1></center>
     <%- include('./partials/messages.ejs') %>
 
     <form action="/login" method="POST">
       <center>
-        <div class="container">
-          <p><b>Please select one of the following choices:</b></p>
-          <input type="radio" name="personType" value="c" required> Client
-          <input type="radio" name="personType" value="l" required> Lawyer
-          <br><br><br>
-
-          <label for="email" class="pad"><b>e-mail:</b></label>
-          <br>
-          <input class="pratik" type="email" placeholder="Enter Email" name="email" required>
-          <br>
-
-          <label for="password" class="passwordpad"><b>Password:</b></label>
-          <br>
-          <input class="pratik" type="password" placeholder="Enter Password" name="password" required>
-          <br>
-              
-          <button type="submit">Login</button>
+        <div class="container form-wrapper">
+          <table>
+            <tr>
+              <td colspan="2"><b>Please select one of the following choices:</b></td>
+            </tr>
+            <tr>
+              <td><input type="radio" name="personType" value="c" required> Client</td>
+              <td><input type="radio" name="personType" value="l" required> Lawyer</td>
+            </tr>
+            <tr>
+              <td><label for="email"><b>E-Mail:</b></label></td>
+              <td><input class="pratik" type="email" placeholder="Enter Email" name="email" required></td>
+            </tr>
+            <tr>
+              <td><label for="password"><b>Password:</b></label></td>
+              <td><input class="pratik" type="password" placeholder="Enter Password" name="password" required></td>
+            </tr>
+            <tr>
+              <td colspan="2" style="text-align: center;"><button type="submit">Login</button></td>
+            </tr>
+          </table>
         </div>
       </center>
     </form>
-
-    <form action="/" method="GET">
-      <div class="container" style="background-color:#f1f1f1">
-        <button type="submit" class="backbtn">Back</button>
+    
+    <footer class="footer">
+      <div class="text-center p-3">
+        © 2024 Copyright:
+        <a class="text-body" href="https://github.com/ANI-IN"><u>ANI-IN</u></a>
       </div>
-    </form>
+    </footer>
   </body>
 </html>

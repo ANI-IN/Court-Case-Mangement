@@ -84,6 +84,6 @@ app.listen
         if(err)
             throw err;
 
-        console.log(`Server started on PORT ${PORT}...`);
+            console.log(`Server is Running at http://localhost:${PORT}`);
     }
 );
