@@ -1,8 +1,16 @@
 <link rel="stylesheet" type="text/css" href="/css/add_case_pg2_style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <form action="/client/add_case_pg2" method="POST">
+    
     <section class="container">
         <div id="main">
+            <tr>
+                <td colspan="2" class="center" style="text-align: center;">
+                    <a href="/client/Dashboard" class="button" style="font-size: 20px; "><i class="fa fa-home"></i> Dashboard</a>
+                </td>
+            </tr>
+            
             <h1><strong>Please Select a Lawyer</strong></h1>
             <div class="tbl-header">
                 <table cellpadding="0" cellspacing="0" border="0">
@@ -32,25 +40,24 @@
                                         <td>
                                             <label><input required type="radio" name="lawyer_id" value="<%= lawyer._id %>"></label>
                                         </td>
-                                        <td><%= lawyer.fname %> </td>
-                                        <td>age</td>
-                                        <td>no of cases..</td>
-                                        <td>this is the lawyers experience</td>
-                                        <td>this will be his payment criteria</td>
-                                    
+                                        <td><%= lawyer.fname %> <%= lawyer.lname %></td>
+                                        <td><%= lawyer.age %></td>
+                                        <td><%= lawyer.fees %></td>
+                                        <td><%= lawyer.experience %></td>
+                                        <td>Rs. <%= lawyer.fees %> per hour</td>
                                         <td><form action="/lawyer/display_lawyer_profile/<%= lawyer._id %>" method="GET"><button type="submit">More Details</button></form></td>
                                     </tr>
                                 <% }
                             }
                         ); %>
-                      
-
                     </tbody>
                 </table>
             </div>
-            <div class="center">
-                <button type="submit"><strong>Proceed</strong></button>
+            <div class="center" style="white-space: nowrap;">
+                <button type="submit" style="padding-bottom: 10px; margin-bottom: 10px;"><strong>Proceed</strong></button>
             </div>
+            
+            
         </div>
     </section>
 </form>

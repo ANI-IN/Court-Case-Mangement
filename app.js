@@ -76,14 +76,8 @@ app.use('/chat', require('./routes/chat.js'));
 
 
 const PORT = process.env.PORT || 3300;
-app.listen
-(
-    PORT,
-    (err) =>
-    {
-        if(err)
-            throw err;
-
-            console.log(`Server is Running at http://localhost:${PORT}`);
-    }
-);
+app.listen(PORT, (err) => {
+    if (err)
+        throw err;
+    console.log(`Server is Running at http://localhost:${PORT}`);
+});
